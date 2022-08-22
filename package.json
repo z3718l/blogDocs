@@ -1,0 +1,23 @@
+{
+  "name": "blogdocs",
+  "version": "1.0.0",
+  "description": "技术文档",
+  "main": "index.js",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/z3718l/blogDocs.git"
+  },
+  "author": "张龙",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/z3718l/blogDocs/issues"
+  },
+  "homepage": "https://github.com/z3718l/blogDocs#readme",
+  "devDependencies": {
+    "vuepress": "^1.9.7"
+  }
+}
