@@ -1,3 +1,5 @@
 module.exports = {
-    base: '/blogDocs/'
+    title: '前端',
+    base: '/blogDocs/',
+    dest: './dist'
 }
