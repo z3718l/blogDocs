@@ -18,6 +18,9 @@
   },
   "homepage": "https://github.com/z3718l/blogDocs#readme",
   "devDependencies": {
+    "@vuepress/plugin-active-header-links": "^1.9.7",
+    "@vuepress/plugin-back-to-top": "^1.9.7",
+    "@vuepress/plugin-register-components": "^1.9.7",
     "vuepress": "^1.9.7"
   }
 }

@@ -25,8 +25,11 @@
 6. 前沿技术
    1. 低代码系统、微前端、web3.0、图形学
 
+## GitHub
+[z3718l](https://github.com/z3718l)
+
 ## 微信公众号
-![公众号](./images/wxgzh.jpg)
+![image](./images/wxgzh.jpg)
 
 ## 掘金主页
 [zhanglong前端](https://juejin.cn/user/2436173496854605)

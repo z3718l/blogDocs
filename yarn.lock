@@ -1394,10 +1394,18 @@
     markdown-it-table-of-contents "^0.4.0"
     prismjs "^1.13.0"
 
-"@vuepress/plugin-active-header-links@1.9.7":
+"@vuepress/plugin-active-header-links@1.9.7", "@vuepress/plugin-active-header-links@^1.9.7":
   version "1.9.7"
   resolved "https://registry.yarnpkg.com/@vuepress/plugin-active-header-links/-/plugin-active-header-links-1.9.7.tgz#11b3b148d50ebd0a9a9d9e97aa34d81ae04e7307"
   integrity sha512-G1M8zuV9Og3z8WBiKkWrofG44NEXsHttc1MYreDXfeWh/NLjr9q1GPCEXtiCjrjnHZHB3cSQTKnTqAHDq35PGA==
+  dependencies:
+    "@vuepress/types" "1.9.7"
+    lodash.debounce "^4.0.8"
+
+"@vuepress/plugin-back-to-top@^1.9.7":
+  version "1.9.7"
+  resolved "https://registry.yarnpkg.com/@vuepress/plugin-back-to-top/-/plugin-back-to-top-1.9.7.tgz#249a76d79f1e0c8c71a2804485ad0245837e6bfd"
+  integrity sha512-DM1S+Q8Xn/i+zhe4zThekxb1M2abfKLklg/NKtQloklHKdNdVfk+EcxWYNmNfSii+ymDWaaG8lmH0xjVhy0iXw==
   dependencies:
     "@vuepress/types" "1.9.7"
     lodash.debounce "^4.0.8"
@@ -1418,7 +1426,7 @@
     "@vuepress/types" "1.9.7"
     nprogress "^0.2.0"
 
-"@vuepress/plugin-register-components@1.9.7":
+"@vuepress/plugin-register-components@1.9.7", "@vuepress/plugin-register-components@^1.9.7":
   version "1.9.7"
   resolved "https://registry.yarnpkg.com/@vuepress/plugin-register-components/-/plugin-register-components-1.9.7.tgz#0234f887b32c1d836fa68cdd06d7e851397fd268"
   integrity sha512-l/w1nE7Dpl+LPMb8+AHSGGFYSP/t5j6H4/Wltwc2QcdzO7yqwC1YkwwhtTXvLvHOV8O7+rDg2nzvq355SFkfKA==

@@ -7,6 +7,11 @@ module.exports = {
   head: [
     ["link", { rel: "icon", href: "/images/favicon.png" }],
   ],
+  plugins: [
+    '@vuepress/active-header-links',
+    '@vuepress/back-to-top',
+    '@vuepress/register-components'
+  ],
   themeConfig: {
     nav: [
       { text: '首页', link: '/' },
@@ -48,18 +53,6 @@ module.exports = {
         ]
       },
       {
-        text: '计算机相关知识',
-        ariaLabel: '包含浏览器、网络通信、web安全等等',
-        items: [
-          { text: '浏览器', link: '/' },
-          { text: '网络通信', link: '/' },
-          { text: 'web安全', link: '/' },
-          { text: '操作系统', link: '/' },
-          { text: '数据结构与算法', link: '/' },
-          { text: '编译原理', link: '/' },
-        ]
-      },
-      {
         text: '跨平台',
         ariaLabel: '',
         items: [
@@ -74,6 +67,12 @@ module.exports = {
         text: '必备扩展知识',
         ariaLabel: '',
         items: [
+          { text: '浏览器', link: '/' },
+          { text: '网络通信', link: '/' },
+          { text: 'web安全', link: '/' },
+          { text: '操作系统', link: '/' },
+          { text: '数据结构与算法', link: '/' },
+          { text: '编译原理', link: '/' },
           { text: '设计模式', link: '/' },
           { text: 'NodeJS', link: '/' },
           { text: '微前端', link: '/' },
@@ -94,16 +93,10 @@ module.exports = {
         ]
       },
       {
-        text: '手写系列',
-        ariaLabel: '',
-        items: [
-          { text: '实现防抖函数(debounce)', link: '/' },
-        ]
-      },
-      {
         text: '其他',
         ariaLabel: '',
         items: [
+          { text: '手写系列', link: '/' },
           { text: '前端面试', link: '/' },
           { text: '工具网站导航', link: '/' },
           { text: 'mac使用技巧', link: '/' },
@@ -119,7 +112,7 @@ module.exports = {
           { text: '技术交流小分队', link: 'https://www.yuque.com/hmohvc' },
         ]
       },
-      { text: 'gitHub', link: 'https://github.com/z3718l' },
+      { text: 'GitHub', link: 'https://github.com/z3718l/blogDocs' },
     ],
     sidebar: {
       ...baseConfig.sidebarConfig
