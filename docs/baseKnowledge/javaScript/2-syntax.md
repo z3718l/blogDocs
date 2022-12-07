@@ -24,10 +24,12 @@ function myFunc() {
 ```js
 // 如果是单行代码，可以不写{}
 if (true) console.log(1);
+// 也可以不写if
+true && console.log(1);
 ```
 > if判断的优雅写法
+1. 传统写法
 ```js
-// 1、传统写法
 function test1 (p) {
     if (p == 1) {
         console.log('执行1');
@@ -36,29 +38,36 @@ function test1 (p) {
     }
 }
 console.log(test1(1)); // 执行1
-
-// 2、对象写法
-const testP = {
-    1: () => console.log('执行1'),
-    2: () => console.log('执行2'),
+```
+2. 三元运算符
+```js
+let t = ''
+if（p > 0）{
+   t = '1';
+} else {
+   t = '0';
 }
-console.log(testP[1]); // 执行1
 
-// 3、new Map()写法
-const MF = new Map([
-    ['2', () => { console.log('2') }],
-    ['3', () => { console.log('3') }],
-    ['4', () => { console.log('4') }],
-])
-console.log(MF.get('3')()); // 2
-
-const MF = new Map()
-  .set('2', ['apple', 'strawberry'])
-  .set('3', ['banana', 'pineapple'])
-  .set('4', ['grape', 'plum']);
-console.log(MF.get('3')); // 'apple', 'strawberry'
-
-// 4、如果判断条件不一致
+// 优化后
+let t = p > 0 ? '1' : 'o'
+```
+3. 单个if 多条件优化
+```js
+function test1 (p) {
+    if (p == 1 || p == 2 || p == 3) {
+        console.log('p')
+    }
+}
+改进
+function test1 (p) {
+    const arr = [1, 2, 3];
+    if (arr.includes(p)) {
+        console.log('p')
+    }
+}
+```
+4. 如果判断条件不一致
+```js
 使用对象的也不太合适，但是也不要写`if else`
 function test1 (p, d) {
     if (p == 1) {
@@ -78,12 +87,37 @@ function test1 (p, d) {
         return;
     }
 }
+```
+5. 对象写法
+```js
+const testP = {
+    1: () => console.log('执行1'),
+    2: () => console.log('执行2'),
+}
+console.log(testP[1]); // 执行1
+```
+6. `new Map()` 写法
+```js
+const MF = new Map([
+    ['2', () => { console.log('2') }],
+    ['3', () => { console.log('3') }],
+    ['4', () => { console.log('4') }],
+])
+console.log(MF.get('3')()); // 2
 
+const MF = new Map()
+  .set('2', ['apple', 'strawberry'])
+  .set('3', ['banana', 'pineapple'])
+  .set('4', ['grape', 'plum']);
+console.log(MF.get('3')); // 'apple', 'strawberry'
+```
 总结：
 1. 很明显对象写法和new Map写法比if 或者 switch写法更加优雅；
 2. new Map() 的查询速度会比对象更快
-3. 所以推荐使用new Map()方法
-```
+3. 对象的键只能是字符串或符号，而Map的键可以是任何类型的值。
+4. 我们可以使用Map size属性轻松获取Map的键/值对的数量，而对象的键/值对的数量只能手动确定。
+5. 所以推荐使用new Map()方法
+6. 我们只是在形式上改变了`if else`的写法，底层还是没有变
 
 ## 三、`while` 语句
 ```js
@@ -145,7 +179,8 @@ switch (i) {
 
 :::tip
 总结：
-1. 超过两个判断的就尽量不用`if else`，而是使用对象或者`new Map`
-2. 如果判断条件不一致，使用单个`if`语句，这样看起来优雅些，不至于代码混乱
-3. 循环的时候要注意循环条件，避免造成栈溢出
+1. 简单的使用三元运算符
+2. 超过两个判断的就尽量不用`if else`，而是使用对象或者`new Map`
+3. 如果判断条件不一致，使用单个`if`语句，这样看起来优雅些，不至于代码混乱
+4. 循环的时候要注意循环条件，避免造成栈溢出
 :::
