@@ -6,11 +6,37 @@ module.exports = {
   base: '/blogDocs/',
   head: [
     ["link", { rel: "icon", href: "/images/favicon.png" }],
+    [
+      "link",
+      {
+        rel: "stylesheet",
+        href:
+          "https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css",
+      },
+    ],
+    ["meta", { name: "theme-color", content: "#00adb5" }],
+    ["meta", { name: "apple-mobile-web-app-capable", content: "yes" }],
+    [
+      "meta",
+      { name: "apple-mobile-web-app-status-bar-style", content: "black" },
+    ],
+    ["meta", { name: "msapplication-TileColor", content: "#00adb5" }],
+    [
+      "meta",
+      {
+        name: "description",
+        itemprop: "description",
+        content: "大前端知识体系",
+      },
+    ],
+    ["meta", { itemprop: "name", content: "大前端知识体系" }],
+    ["meta", { itemprop: "image", content: "/blogDocs/images/favicon.png" }],
   ],
   plugins: [
+    require('./plugins/copy/index.js'),
     '@vuepress/active-header-links',
     '@vuepress/back-to-top',
-    '@vuepress/register-components'
+    '@vuepress/register-components',
   ],
   themeConfig: {
     nav: [
@@ -118,5 +144,6 @@ module.exports = {
       ...baseConfig.sidebarConfig
     },
     lastUpdated: "上次更新时间",
+    contributors: true,
   }
 }
