@@ -2,8 +2,8 @@ const baseConfig = {
     items: [
         { text: 'HTML', link: '/baseKnowledge/html/1-attribute' },
         { text: 'CSS', link: '/baseKnowledge/css/1-layout' },
-        // { text: 'JavaScript', link: '/baseKnowledge/javaScript/1-foreword' },
-        // { text: 'TypeScript', link: '/baseKnowledge/typeScript/1-foreword' },
+        { text: 'JavaScript', link: '/baseKnowledge/javaScript/1-foreword' },
+        { text: 'TypeScript', link: '/baseKnowledge/typeScript/1-foreword' },
     ],
     sidebarConfig: {
         '/baseKnowledge/html/': [
@@ -39,23 +39,23 @@ const baseConfig = {
                 title: 'javaScript',
                 collapsable: false,
                 children: [
-                    // { title: '前言', path: '/baseKnowledge/javaScript/1-foreword' },
-                    // { title: '语句语法', path: '/baseKnowledge/javaScript/2-syntax' },
-                    // { title: '类型', path: '/baseKnowledge/javaScript/3-type' },
-                    // { title: '作用域与作用域链', path: '/baseKnowledge/javaScript/4-scope' },
-                    // { title: '变量', path: '/baseKnowledge/javaScript/5-variate' },
-                    // { title: '执行上下文', path: '/baseKnowledge/javaScript/6-context' },
-                    // { title: '内存与垃圾回收', path: '/baseKnowledge/javaScript/7-garbage' },
-                    // { title: '闭包', path: '/baseKnowledge/javaScript/8-closure' },
-                    // { title: 'this', path: '/baseKnowledge/javaScript/9-this' },
-                    // { title: '原型和原型链', path: '/baseKnowledge/javaScript/10-prototype' },
-                    // {
-                    //     title: 'ES6',
-                    //     collapsable: false,
-                    //     children: [
-                    //         { title: '基础', path: '/baseKnowledge/javaScript/1-foreword' },
-                    //     ]
-                    // },
+                    { title: '前言', path: '/baseKnowledge/javaScript/1-foreword' },
+                    { title: '语句语法', path: '/baseKnowledge/javaScript/2-syntax' },
+                    { title: '类型', path: '/baseKnowledge/javaScript/3-type' },
+                    { title: '作用域与作用域链', path: '/baseKnowledge/javaScript/4-scope' },
+                    { title: '变量', path: '/baseKnowledge/javaScript/5-variate' },
+                    { title: '执行上下文', path: '/baseKnowledge/javaScript/6-context' },
+                    { title: '内存与垃圾回收', path: '/baseKnowledge/javaScript/7-garbage' },
+                    { title: '闭包', path: '/baseKnowledge/javaScript/8-closure' },
+                    { title: 'this', path: '/baseKnowledge/javaScript/9-this' },
+                    { title: '原型和原型链', path: '/baseKnowledge/javaScript/10-prototype' },
+                    {
+                        title: 'ES6',
+                        collapsable: false,
+                        children: [
+                            { title: '基础', path: '/baseKnowledge/javaScript/1-foreword' },
+                        ]
+                    },
                 ]
             }
         ],
