@@ -42,6 +42,9 @@ const baseConfig = {
                     { title: '前言', path: '/baseKnowledge/javaScript/1-foreword' },
                     { title: '语句语法', path: '/baseKnowledge/javaScript/2-syntax' },
                     { title: '类型', path: '/baseKnowledge/javaScript/3-type' },
+                    { title: '类型转换', path: '/baseKnowledge/javaScript/3-type1' },
+                    { title: '原始值与引用值', path: '/baseKnowledge/javaScript/3-type2' },
+                    { title: '浅拷贝与深拷贝', path: '/baseKnowledge/javaScript/3-type3' },
                     { title: '作用域与作用域链', path: '/baseKnowledge/javaScript/4-scope' },
                     { title: '变量', path: '/baseKnowledge/javaScript/5-variate' },
                     { title: '执行上下文', path: '/baseKnowledge/javaScript/6-context' },
@@ -52,6 +55,7 @@ const baseConfig = {
                     {
                         title: 'ES6',
                         collapsable: false,
+                        // path: '/baseKnowledge/javaScript/1-foreword',
                         children: [
                             { title: '基础', path: '/baseKnowledge/javaScript/1-foreword' },
                         ]

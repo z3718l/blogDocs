@@ -32,6 +32,9 @@ module.exports = {
     ["meta", { itemprop: "name", content: "大前端知识体系" }],
     ["meta", { itemprop: "image", content: "/blogDocs/images/favicon.png" }],
   ],
+  markdown: {
+    lineNumbers: true
+  },
   plugins: [
     require('./plugins/copy/index.js'),
     '@vuepress/active-header-links',
