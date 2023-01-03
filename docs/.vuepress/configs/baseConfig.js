@@ -30,7 +30,10 @@ const baseConfig = {
                 collapsable: false,
                 children: [
                     { title: '基础布局', path: '/baseKnowledge/css/1-layout' },
-                    { title: 'CSS动画', path: '/baseKnowledge/css/2-animation' },
+                    { title: '盒模型', path: '/baseKnowledge/css/2-box' },
+                    { title: 'CSS动画', path: '/baseKnowledge/css/3-animation' },
+                    { title: 'CSS选择器', path: '/baseKnowledge/css/4-selector' },
+                    { title: 'BFC', path: '/baseKnowledge/css/5-bfc' },
                 ]
             }
         ],
