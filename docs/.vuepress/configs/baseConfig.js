@@ -3,7 +3,8 @@ const baseConfig = {
         { text: 'HTML', link: '/baseKnowledge/html/1-attribute' },
         { text: 'CSS', link: '/baseKnowledge/css/1-layout' },
         { text: 'JavaScript', link: '/baseKnowledge/javaScript/1-foreword' },
-        { text: 'TypeScript', link: '/baseKnowledge/typeScript/1-foreword' },
+        { text: 'JavaScript进阶', link: '/baseKnowledge/javaScriptUtil/1-simplifyUtil' },
+        { text: 'TypeScript', link: '/baseKnowledge/typeScript/1-base' },
     ],
     sidebarConfig: {
         '/baseKnowledge/html/': [
@@ -55,14 +56,52 @@ const baseConfig = {
                     { title: '闭包', path: '/baseKnowledge/javaScript/8-closure' },
                     { title: '内存与垃圾回收', path: '/baseKnowledge/javaScript/9-garbage' },
                     { title: '原型和原型链', path: '/baseKnowledge/javaScript/10-prototype' },
+                    { title: 'Null', path: '/baseKnowledge/javaScript/11-null' },
+                    { title: 'Number', path: '/baseKnowledge/javaScript/12-number' },
+                    { title: 'NaN', path: '/baseKnowledge/javaScript/13-nan' },
+                    { title: 'String', path: '/baseKnowledge/javaScript/14-string' },
+                    { title: 'Boolean', path: '/baseKnowledge/javaScript/15-boolean' },
+                    { title: 'Array', path: '/baseKnowledge/javaScript/16-array' },
+                    { title: 'Date', path: '/baseKnowledge/javaScript/17-date' },
+                    { title: 'Map', path: '/baseKnowledge/javaScript/18-map' },
+                    { title: 'JSON', path: '/baseKnowledge/javaScript/19-json' },
+                    { title: 'RegExp', path: '/baseKnowledge/javaScript/20-regExp' },
+                    { title: 'Function', path: '/baseKnowledge/javaScript/21-function' },
+                    { title: '类(class)', path: '/baseKnowledge/javaScript/22-class' },
                     {
-                        title: 'ES6',
+                        title: '面向对象编程(OOP)',
                         collapsable: false,
-                        // path: '/baseKnowledge/javaScript/1-foreword',
+                        path: '/baseKnowledge/javaScript/23-oop',
                         children: [
-                            { title: '基础', path: '/baseKnowledge/javaScript/1-foreword' },
+                            { title: '基础', path: '/baseKnowledge/javaScript/23-oop' },
+                            { title: '继承', path: '/baseKnowledge/javaScript/23-oop' },
+                            { title: '封装', path: '/baseKnowledge/javaScript/23-oop' },
+                            { title: '多态', path: '/baseKnowledge/javaScript/23-oop' },
                         ]
                     },
+                    { title: '面向切面编程(AOP)', path: '/baseKnowledge/javaScript/24-aop' },
+                    { title: '元编程', path: '/baseKnowledge/javaScript/25-yuan' },
+                    { title: '函数式编程', path: '/baseKnowledge/javaScript/26-funcProgram' },
+                    { title: 'BOM', path: '/baseKnowledge/javaScript/28-bom' },
+                    { title: 'DOM', path: '/baseKnowledge/javaScript/29-dom' },
+                    { title: '事件机制', path: '/baseKnowledge/javaScript/30-event' },
+                    { title: '事件循环', path: '/baseKnowledge/javaScript/31-eventLoop' },
+                ]
+            }
+        ],
+        '/baseKnowledge/javaScriptUtil/': [
+            {
+                title: 'javaScript进阶',
+                collapsable: false,
+                children: [
+                    { title: 'JS简写技巧', path: '/baseKnowledge/javaScriptUtil/1-simplifyUtil' },
+                    { title: '代码重构', path: '/baseKnowledge/javaScriptUtil/2-codeRecons' },
+                    { title: 'JS运行原理', path: '/baseKnowledge/javaScriptUtil/3-jsRunTime' },
+                    { title: 'JS异步实现方案', path: '/baseKnowledge/javaScriptUtil/4-jsAsync' },
+                    { title: 'V8如何执行一段JS代码', path: '/baseKnowledge/javaScriptUtil/5-v8ToJs' },
+                    { title: 'JavaScript高级函数', path: '/baseKnowledge/javaScriptUtil/8-jsHeight' },
+                    { title: 'JS实战[随机取个数字]', path: '/baseKnowledge/javaScriptUtil/6-actual-mathNum' },
+                    { title: 'JS实战[取整]', path: '/baseKnowledge/javaScriptUtil/7-actual-quzheng' },
                 ]
             }
         ],
@@ -71,7 +110,7 @@ const baseConfig = {
                 title: 'typeScript',
                 collapsable: false,
                 children: [
-                    // { title: '基础', path: '/baseKnowledge/typeScript/1-foreword' },
+                    { title: '基础', path: '/baseKnowledge/typeScript/1-base' },
                 ]
             }
         ],

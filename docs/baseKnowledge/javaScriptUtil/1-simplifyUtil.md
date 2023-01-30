@@ -1,0 +1,1 @@
+# JavaScript简写技巧
