@@ -1,4 +1,5 @@
 const { baseConfig } = require('./configs/baseConfig');
+const { hotFrameConfig } = require('./configs/hotFrameConfig');
 
 module.exports = {
   title: '大前端知识体系',
@@ -52,11 +53,7 @@ module.exports = {
       {
         text: '热门框架',
         ariaLabel: '热门框架',
-        items: [
-          { text: 'React', link: '/' },
-          { text: 'Vue', link: '/' },
-          { text: 'Omi', link: '/' },
-        ]
+        items: hotFrameConfig.items
       },
       {
         text: '基建与工程开发',
@@ -144,7 +141,8 @@ module.exports = {
       { text: 'GitHub', link: 'https://github.com/z3718l/blogDocs' },
     ],
     sidebar: {
-      ...baseConfig.sidebarConfig
+      ...baseConfig.sidebarConfig,
+      ...hotFrameConfig.sidebarConfig
     },
     lastUpdated: "上次更新时间",
     contributors: true,
