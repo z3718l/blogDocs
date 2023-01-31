@@ -58,7 +58,6 @@ const baseConfig = {
                     { title: '原型和原型链', path: '/baseKnowledge/javaScript/10-prototype' },
                     { title: 'Null', path: '/baseKnowledge/javaScript/11-null' },
                     { title: 'Number', path: '/baseKnowledge/javaScript/12-number' },
-                    { title: 'NaN', path: '/baseKnowledge/javaScript/13-nan' },
                     { title: 'String', path: '/baseKnowledge/javaScript/14-string' },
                     { title: 'Boolean', path: '/baseKnowledge/javaScript/15-boolean' },
                     { title: 'Array', path: '/baseKnowledge/javaScript/16-array' },
@@ -100,6 +99,8 @@ const baseConfig = {
                     { title: 'JS异步实现方案', path: '/baseKnowledge/javaScriptUtil/4-jsAsync' },
                     { title: 'V8如何执行一段JS代码', path: '/baseKnowledge/javaScriptUtil/5-v8ToJs' },
                     { title: 'JavaScript高级函数', path: '/baseKnowledge/javaScriptUtil/8-jsHeight' },
+                    { title: 'JS常用判断类型的方法', path: '/baseKnowledge/javaScriptUtil/9-judgmentType' },
+                    { title: 'JS判断对象是否为空', path: '/baseKnowledge/javaScriptUtil/10-objectIsNull' },
                     { title: 'JS实战[随机取个数字]', path: '/baseKnowledge/javaScriptUtil/6-actual-mathNum' },
                     { title: 'JS实战[取整]', path: '/baseKnowledge/javaScriptUtil/7-actual-quzheng' },
                 ]
