@@ -94,7 +94,15 @@ const baseConfig = {
                 collapsable: false,
                 children: [
                     { title: 'JS简写技巧', path: '/baseKnowledge/javaScriptUtil/1-simplifyUtil' },
-                    { title: '代码重构', path: '/baseKnowledge/javaScriptUtil/2-codeRecons' },
+                    {
+                        title: '代码重构',
+                        collapsable: false,
+                        path: '/baseKnowledge/javaScriptUtil/2-codeRecons',
+                        children: [
+                            { title: '重构概念', path: '/baseKnowledge/javaScriptUtil/2-codeRecons' },
+                            { title: '重构方案', path: '/baseKnowledge/javaScriptUtil/2-codeRecons1' },
+                        ]
+                    },
                     { title: 'JS运行原理', path: '/baseKnowledge/javaScriptUtil/3-jsRunTime' },
                     { title: 'JS异步实现方案', path: '/baseKnowledge/javaScriptUtil/4-jsAsync' },
                     { title: 'V8如何执行一段JS代码', path: '/baseKnowledge/javaScriptUtil/5-v8ToJs' },
