@@ -463,6 +463,8 @@ let arr = [1, 3, 5, 7]
 let isHasNum = (n, arr) => arr.some(num => num === n)
 ```
 5. 尽量少的使用if-else或者是switch
+
+参考：[Object和new Map()的比较](./11-object%26Map.md)
 ```js
 <script>
 export default = {
@@ -518,6 +520,130 @@ function test(color) {
   return fruitColor.get(color) || [];
 }
 ```
-## 4. 对象和数据结构
+## 4. 对象和数据结构以及类
+1. 注意保护私有成员和受保护的成员
+2. 基于SOLID的编程范式
+3. 使用方法链 这个破坏得墨忒⽿定律（不要和陌⽣⼈说话）
+```js
+// 这个⽅法对于JS是⽆敌的好处
+class Car {
+  constructor() {
+    this.make = 'Honda';
+    this.model = 'Accord';
+    this.color = 'white';
+  }
+  setMake(make) {
+    this.name = name;
+    // NOTE: 返回 this 以实现链式调⽤
+    return this;
+  }
+  setModel(model) {
+    this.model = model;
+    // NOTE: 返回 this 以实现链式调⽤
+    return this;
+  }
+  setColor(color) {
+    this.color = color;
+    // NOTE: 返回 this 以实现链式调⽤
+    return this;
+  }
+  save() {
+    console.log(this.make, this.model, this.color);
+  }
+}
+let car = new Car()
+.setColor('pink')
+.setMake('Ford')
+.setModel('F-150')
+.save();
+```
+4. 对组合或者继承要有明确的分工
+```js
+//bad
+class Employee {
+  constructor(name, email) {
+    this.name = name;
+    this.email = email;
+	}
+	// ...
+}
+// 这样不好，因为 Employees "拥有" 税务数据。EmployeeTaxData 不是属于 Employee的⼀个类型
+class EmployeeTaxData extends Employee {
+  constructor(ssn, salary) {
+    super();
+    this.ssn = ssn;
+    this.salary = salary;
+	}
+  // ...
+}
 
-## 5. 类
+// good
+class Employee {
+  constructor(name, email) {
+    this.name = name;
+    this.email = email;
+  }
+  setTaxData(ssn, salary) {
+    this.taxData = new EmployeeTaxData(ssn, salary);
+  }
+  // ...
+}
+class EmployeeTaxData {
+  constructor(ssn, salary) {
+    this.ssn = ssn;
+    this.salary = salary;
+  }
+  // ...
+}
+```
+
+## 5. 其他编程范式
+1. JavaScript单元测试且每次测试⼀个概念
+```js
+const assert = require('assert');
+describe('MakeMomentJSGreatAgain', function() {
+it('handles 30-day months', function() {
+let date = new MakeMomentJSGreatAgain('1/1/2015');
+date.addDays(30);
+// ❌ date.addDays(28);
+date.shouldEqual('1/31/2015');
+});
+it('handles leap year', function() {
+let date = new MakeMomentJSGreatAgain('2/1/2016');
+date.addDays(28);
+assert.equal('02/29/2016', date);
+ });
+it('handles non-leap year', function() {
+  let date = new MakeMomentJSGreatAgain('2/1/2015');
+date.addDays(28);
+assert.equal('03/01/2015', date);
+});
+});
+```
+2. 更专业的async/await
+```js
+//let { x: first, x: second } = { x: 4 };
+//console.log( first, second ); // 4, 4
+const {error,data} = await fetch("/api/data");
+```
+3. 使⽤对错误处理兼容良好的sdk
+4. 使⽤函数式编程把函数变成纯函数
+5. 良好的⼤⼩写规范和强制的代码规范
+```js
+const DAYS_IN_WEEK = 7;
+const DAYS_IN_MONTH = 30;
+const songs = ['Back In Black', 'Stairway to Heaven', 'Hey Jude'];
+const artists = ['ACDC', 'Led Zeppelin', 'The Beatles'];
+function eraseDatabase() {}
+function restoreDatabase() {}
+class Animal {}
+class Alpaca {}
+```
+6. 函数调⽤者和被调⽤者应该尽可能放在⼀起
+7. 只注释业务逻辑复杂的内容
+8. 不要把注释掉的代码留在代码库中+位置标记+版权注释
+
+:::tip
+注意：在设计对象的状态和行为时，我们总是遵循“行为状态的”的原则；
+也就是，对象上的方法，是能改变对象的状态
+:::

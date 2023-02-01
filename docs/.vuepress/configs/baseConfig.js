@@ -103,6 +103,7 @@ const baseConfig = {
                             { title: '重构方案', path: '/baseKnowledge/javaScriptUtil/2-codeRecons1' },
                         ]
                     },
+                    { title: 'Object和new Map()的比较', path: '/baseKnowledge/javaScriptUtil/11-object&Map' },
                     { title: 'JS运行原理', path: '/baseKnowledge/javaScriptUtil/3-jsRunTime' },
                     { title: 'JS异步实现方案', path: '/baseKnowledge/javaScriptUtil/4-jsAsync' },
                     { title: 'V8如何执行一段JS代码', path: '/baseKnowledge/javaScriptUtil/5-v8ToJs' },
