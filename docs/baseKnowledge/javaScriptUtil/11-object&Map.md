@@ -192,8 +192,14 @@ console.log(iterator1.next().value);
 console.log(iterator1.next().value);
 // Expected output: Array [1, "bar"]
 ```
-## 五、推荐理由
+## 五、什么时候用Map
+1. 想要添加的键值名和Object上默认键值名冲突，又不好想改名，用Map
+2. 需要String和Symbol以外的数据类型做键值，用Map
+3. 键值很多，有时需要计算数量，用Map
+4. 需要频繁的增删键值对，用Map
+## 六、推荐理由
 1. Map的查询速度较快
 2. 支持的写法更多 <br />
+
 
 但是：如果只是简单的数据，可以使用Object

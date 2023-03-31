@@ -70,12 +70,12 @@ const baseConfig = {
                     {
                         title: '面向对象编程(OOP)',
                         collapsable: false,
-                        path: '/baseKnowledge/javaScript/23-oop',
+                        path: '/baseKnowledge/javaScript/23-oop-0',
                         children: [
-                            { title: '基础', path: '/baseKnowledge/javaScript/23-oop' },
-                            { title: '继承', path: '/baseKnowledge/javaScript/23-oop' },
-                            { title: '封装', path: '/baseKnowledge/javaScript/23-oop' },
-                            { title: '多态', path: '/baseKnowledge/javaScript/23-oop' },
+                            { title: '基础', path: '/baseKnowledge/javaScript/23-oop-0' },
+                            { title: '继承', path: '/baseKnowledge/javaScript/23-oop-1' },
+                            { title: '封装', path: '/baseKnowledge/javaScript/23-oop-2' },
+                            { title: '多态', path: '/baseKnowledge/javaScript/23-oop-3' },
                         ]
                     },
                     { title: '面向切面编程(AOP)', path: '/baseKnowledge/javaScript/24-aop' },
