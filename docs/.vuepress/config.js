@@ -136,6 +136,7 @@ module.exports = {
           { text: '个人中心', link: 'https://www.yuque.com/rain.shine' },
           { text: '前端知识库', link: 'https://www.yuque.com/rain.shine/vcpywp/gso8yc' },
           { text: '技术交流小分队', link: 'https://www.yuque.com/hmohvc' },
+          { text: '信息系统项目管理师', link: 'https://www.yuque.com/rain.shine/ydu4bb' },
         ]
       },
       { text: 'GitHub', link: 'https://github.com/z3718l/blogDocs' },
