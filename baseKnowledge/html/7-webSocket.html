@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>webSocket | 大前端知识体系</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/blogDocs/images/favicon.png">
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="description" content="学习总结、开发遇到的问题">
+    <meta name="theme-color" content="#00adb5">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileColor" content="#00adb5">
+    <meta itemprop="name" content="大前端知识体系">
+    <meta itemprop="image" content="/blogDocs/images/favicon.png">
+    
+    <link rel="preload" href="/blogDocs/assets/css/0.styles.502e4360.css" as="style"><link rel="preload" href="/blogDocs/assets/js/app.287606aa.js" as="script"><link rel="preload" href="/blogDocs/assets/js/2.8de8ba9f.js" as="script"><link rel="preload" href="/blogDocs/assets/js/25.16eee2e1.js" as="script"><link rel="prefetch" href="/blogDocs/assets/js/10.a7212ed8.js"><link rel="prefetch" href="/blogDocs/assets/js/11.35b168af.js"><link rel="prefetch" href="/blogDocs/assets/js/12.2f4c790e.js"><link rel="prefetch" href="/blogDocs/assets/js/13.b3903998.js"><link rel="prefetch" href="/blogDocs/assets/js/14.b1a23b87.js"><link rel="prefetch" href="/blogDocs/assets/js/15.6995a996.js"><link rel="prefetch" href="/blogDocs/assets/js/16.a4a8e6a0.js"><link rel="prefetch" href="/blogDocs/assets/js/17.377fc2b8.js"><link rel="prefetch" href="/blogDocs/assets/js/18.126296ff.js"><link rel="prefetch" href="/blogDocs/assets/js/19.bc033ce0.js"><link rel="prefetch" href="/blogDocs/assets/js/20.97feece7.js"><link rel="prefetch" href="/blogDocs/assets/js/21.7a165c25.js"><link rel="prefetch" href="/blogDocs/assets/js/22.278e4c96.js"><link rel="prefetch" href="/blogDocs/assets/js/23.fa829268.js"><link rel="prefetch" href="/blogDocs/assets/js/24.f04a4353.js"><link rel="prefetch" href="/blogDocs/assets/js/26.dfffbb2e.js"><link rel="prefetch" href="/blogDocs/assets/js/27.f84586fd.js"><link rel="prefetch" href="/blogDocs/assets/js/28.a61b5d7e.js"><link rel="prefetch" href="/blogDocs/assets/js/29.1ceb9021.js"><link rel="prefetch" href="/blogDocs/assets/js/3.af7b9fe9.js"><link rel="prefetch" href="/blogDocs/assets/js/30.53090ca5.js"><link rel="prefetch" href="/blogDocs/assets/js/31.62441882.js"><link rel="prefetch" href="/blogDocs/assets/js/32.157f7782.js"><link rel="prefetch" href="/blogDocs/assets/js/33.f562f756.js"><link rel="prefetch" href="/blogDocs/assets/js/34.9c9527ca.js"><link rel="prefetch" href="/blogDocs/assets/js/35.cbe7a043.js"><link rel="prefetch" href="/blogDocs/assets/js/36.8f5a885b.js"><link rel="prefetch" href="/blogDocs/assets/js/37.e5887ae1.js"><link rel="prefetch" href="/blogDocs/assets/js/38.d4d404cd.js"><link rel="prefetch" href="/blogDocs/assets/js/39.ee0931b8.js"><link rel="prefetch" href="/blogDocs/assets/js/4.94c26ab3.js"><link rel="prefetch" href="/blogDocs/assets/js/40.c119020e.js"><link rel="prefetch" href="/blogDocs/assets/js/41.52ac6c85.js"><link rel="prefetch" href="/blogDocs/assets/js/42.935c054d.js"><link rel="prefetch" href="/blogDocs/assets/js/43.b65930ed.js"><link rel="prefetch" href="/blogDocs/assets/js/44.a9526d2b.js"><link rel="prefetch" href="/blogDocs/assets/js/45.d8c00661.js"><link rel="prefetch" href="/blogDocs/assets/js/46.a7abd824.js"><link rel="prefetch" href="/blogDocs/assets/js/47.69e770b4.js"><link rel="prefetch" href="/blogDocs/assets/js/48.3c6a2c98.js"><link rel="prefetch" href="/blogDocs/assets/js/49.0bc61a9a.js"><link rel="prefetch" href="/blogDocs/assets/js/5.585fc652.js"><link rel="prefetch" href="/blogDocs/assets/js/50.da559ca7.js"><link rel="prefetch" href="/blogDocs/assets/js/51.bbfec4b2.js"><link rel="prefetch" href="/blogDocs/assets/js/52.03af1e38.js"><link rel="prefetch" href="/blogDocs/assets/js/53.4e8e7f51.js"><link rel="prefetch" href="/blogDocs/assets/js/54.be19ecda.js"><link rel="prefetch" href="/blogDocs/assets/js/55.3cf22ad9.js"><link rel="prefetch" href="/blogDocs/assets/js/56.7cdfa0cb.js"><link rel="prefetch" href="/blogDocs/assets/js/57.deb97210.js"><link rel="prefetch" href="/blogDocs/assets/js/58.d41a68f9.js"><link rel="prefetch" href="/blogDocs/assets/js/59.e9ad78ad.js"><link rel="prefetch" href="/blogDocs/assets/js/6.eea2dc15.js"><link rel="prefetch" href="/blogDocs/assets/js/60.702143e4.js"><link rel="prefetch" href="/blogDocs/assets/js/61.0f49f25a.js"><link rel="prefetch" href="/blogDocs/assets/js/62.59289278.js"><link rel="prefetch" href="/blogDocs/assets/js/63.01ee22f1.js"><link rel="prefetch" href="/blogDocs/assets/js/64.3f81f206.js"><link rel="prefetch" href="/blogDocs/assets/js/65.9b01534e.js"><link rel="prefetch" href="/blogDocs/assets/js/66.836b7a9e.js"><link rel="prefetch" href="/blogDocs/assets/js/67.d025b337.js"><link rel="prefetch" href="/blogDocs/assets/js/68.72dac68e.js"><link rel="prefetch" href="/blogDocs/assets/js/69.1e04c0fa.js"><link rel="prefetch" href="/blogDocs/assets/js/7.e680ac36.js"><link rel="prefetch" href="/blogDocs/assets/js/70.5cc15c58.js"><link rel="prefetch" href="/blogDocs/assets/js/71.c73921cf.js"><link rel="prefetch" href="/blogDocs/assets/js/72.485c8b44.js"><link rel="prefetch" href="/blogDocs/assets/js/73.96934dc4.js"><link rel="prefetch" href="/blogDocs/assets/js/74.452f2d2d.js"><link rel="prefetch" href="/blogDocs/assets/js/75.e2978e95.js"><link rel="prefetch" href="/blogDocs/assets/js/76.41d776de.js"><link rel="prefetch" href="/blogDocs/assets/js/77.92dee3cf.js"><link rel="prefetch" href="/blogDocs/assets/js/8.f5fa509d.js"><link rel="prefetch" href="/blogDocs/assets/js/9.5110e758.js">
+    <link rel="stylesheet" href="/blogDocs/assets/css/0.styles.502e4360.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blogDocs/" class="home-link router-link-active"><!----> <span class="site-name">大前端知识体系</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blogDocs/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基础知识" class="dropdown-title"><span class="title">基础知识</span> <span class="arrow down"></span></button> <button type="button" aria-label="基础知识" class="mobile-dropdown-title"><span class="title">基础知识</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogDocs/baseKnowledge/html/1-attribute.html" class="nav-link">
+  HTML
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/baseKnowledge/css/1-layout.html" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/baseKnowledge/javaScript/1-foreword.html" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/baseKnowledge/javaScriptUtil/1-simplifyUtil.html" class="nav-link">
+  JavaScript进阶
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/baseKnowledge/typeScript/1-base.html" class="nav-link">
+  TypeScript
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="热门框架" class="dropdown-title"><span class="title">热门框架</span> <span class="arrow down"></span></button> <button type="button" aria-label="热门框架" class="mobile-dropdown-title"><span class="title">热门框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogDocs/hotFrame/react/1-base.html" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/hotFrame/reactSoundCode/1-base.html" class="nav-link">
+  React源码学习
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/hotFrame/vue2/1-base.html" class="nav-link">
+  Vue2
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/hotFrame/vue2SoundCode/1-base.html" class="nav-link">
+  Vue2源码学习
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/hotFrame/vue3/1-base.html" class="nav-link">
+  Vue3
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/hotFrame/vue3SoundCode/1-base.html" class="nav-link">
+  Vue3源码学习
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/hotFrame/omi/1-base.html" class="nav-link">
+  OMI
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基建以及工程化" class="dropdown-title"><span class="title">基建与工程开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="基建以及工程化" class="mobile-dropdown-title"><span class="title">基建与工程开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  预编译工具
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  构建工具
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  包管理
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  模块化
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  接口管理
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  代码管理
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  文档规范
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  构建部署
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  性能优化与监控
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  数据分析
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  高级调试
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  抓包工具
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  自动化测试
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  低代码
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  编辑器与IDE
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  自建库
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  研发流程
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="跨平台" class="dropdown-title"><span class="title">跨平台</span> <span class="arrow down"></span></button> <button type="button" aria-label="跨平台" class="mobile-dropdown-title"><span class="title">跨平台</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  小程序
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  reactNative
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  flutter
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  cordova
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  混合开发
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="必备扩展知识" class="dropdown-title"><span class="title">必备扩展知识</span> <span class="arrow down"></span></button> <button type="button" aria-label="必备扩展知识" class="mobile-dropdown-title"><span class="title">必备扩展知识</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  浏览器
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  网络通信
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  web安全
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  操作系统
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  数据结构与算法
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  编译原理
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  设计模式
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  NodeJS
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  微前端
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  web3.0
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  图形学
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  编程思想
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  地图
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端跨界" class="dropdown-title"><span class="title">前端跨界</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端跨界" class="mobile-dropdown-title"><span class="title">前端跨界</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  java
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  python
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  linux
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="其他" class="dropdown-title"><span class="title">其他</span> <span class="arrow down"></span></button> <button type="button" aria-label="其他" class="mobile-dropdown-title"><span class="title">其他</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  手写系列
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  前端面试
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  工具网站导航
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  mac使用技巧
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  软技能
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人语雀文档" class="dropdown-title"><span class="title">语雀文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="个人语雀文档" class="mobile-dropdown-title"><span class="title">语雀文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://www.yuque.com/rain.shine" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  个人中心
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.yuque.com/rain.shine/vcpywp/gso8yc" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  前端知识库
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.yuque.com/hmohvc" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  技术交流小分队
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.yuque.com/rain.shine/ydu4bb" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  信息系统项目管理师
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div><div class="nav-item"><a href="https://github.com/z3718l/blogDocs" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blogDocs/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基础知识" class="dropdown-title"><span class="title">基础知识</span> <span class="arrow down"></span></button> <button type="button" aria-label="基础知识" class="mobile-dropdown-title"><span class="title">基础知识</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogDocs/baseKnowledge/html/1-attribute.html" class="nav-link">
+  HTML
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/baseKnowledge/css/1-layout.html" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/baseKnowledge/javaScript/1-foreword.html" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/baseKnowledge/javaScriptUtil/1-simplifyUtil.html" class="nav-link">
+  JavaScript进阶
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/baseKnowledge/typeScript/1-base.html" class="nav-link">
+  TypeScript
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="热门框架" class="dropdown-title"><span class="title">热门框架</span> <span class="arrow down"></span></button> <button type="button" aria-label="热门框架" class="mobile-dropdown-title"><span class="title">热门框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogDocs/hotFrame/react/1-base.html" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/hotFrame/reactSoundCode/1-base.html" class="nav-link">
+  React源码学习
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/hotFrame/vue2/1-base.html" class="nav-link">
+  Vue2
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/hotFrame/vue2SoundCode/1-base.html" class="nav-link">
+  Vue2源码学习
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/hotFrame/vue3/1-base.html" class="nav-link">
+  Vue3
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/hotFrame/vue3SoundCode/1-base.html" class="nav-link">
+  Vue3源码学习
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/hotFrame/omi/1-base.html" class="nav-link">
+  OMI
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基建以及工程化" class="dropdown-title"><span class="title">基建与工程开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="基建以及工程化" class="mobile-dropdown-title"><span class="title">基建与工程开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  预编译工具
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  构建工具
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  包管理
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  模块化
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  接口管理
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  代码管理
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  文档规范
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  构建部署
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  性能优化与监控
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  数据分析
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  高级调试
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  抓包工具
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  自动化测试
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  低代码
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  编辑器与IDE
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  自建库
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  研发流程
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="跨平台" class="dropdown-title"><span class="title">跨平台</span> <span class="arrow down"></span></button> <button type="button" aria-label="跨平台" class="mobile-dropdown-title"><span class="title">跨平台</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  小程序
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  reactNative
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  flutter
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  cordova
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  混合开发
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="必备扩展知识" class="dropdown-title"><span class="title">必备扩展知识</span> <span class="arrow down"></span></button> <button type="button" aria-label="必备扩展知识" class="mobile-dropdown-title"><span class="title">必备扩展知识</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  浏览器
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  网络通信
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  web安全
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  操作系统
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  数据结构与算法
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  编译原理
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  设计模式
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  NodeJS
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  微前端
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  web3.0
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  图形学
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  编程思想
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  地图
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端跨界" class="dropdown-title"><span class="title">前端跨界</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端跨界" class="mobile-dropdown-title"><span class="title">前端跨界</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  java
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  python
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  linux
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="其他" class="dropdown-title"><span class="title">其他</span> <span class="arrow down"></span></button> <button type="button" aria-label="其他" class="mobile-dropdown-title"><span class="title">其他</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  手写系列
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  前端面试
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  工具网站导航
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  mac使用技巧
+</a></li><li class="dropdown-item"><!----> <a href="/blogDocs/" class="nav-link">
+  软技能
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人语雀文档" class="dropdown-title"><span class="title">语雀文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="个人语雀文档" class="mobile-dropdown-title"><span class="title">语雀文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://www.yuque.com/rain.shine" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  个人中心
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.yuque.com/rain.shine/vcpywp/gso8yc" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  前端知识库
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.yuque.com/hmohvc" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  技术交流小分队
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.yuque.com/rain.shine/ydu4bb" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  信息系统项目管理师
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div><div class="nav-item"><a href="https://github.com/z3718l/blogDocs" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>HTML</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blogDocs/baseKnowledge/html/1-attribute.html" class="sidebar-link">新标签和属性</a></li><li><a href="/blogDocs/baseKnowledge/html/2-canvas.html" class="sidebar-link">canvas</a></li><li><a href="/blogDocs/baseKnowledge/html/3-svg.html" class="sidebar-link">SVG</a></li><li><a href="/blogDocs/baseKnowledge/html/4-drag.html" class="sidebar-link">拖拽</a></li><li><a href="/blogDocs/baseKnowledge/html/5-audioVideo.html" class="sidebar-link">音视频</a></li><li><a href="/blogDocs/baseKnowledge/html/6-webStorage.html" class="sidebar-link">web存储</a></li><li><a href="/blogDocs/baseKnowledge/html/7-webSocket.html" aria-current="page" class="active sidebar-link">webSocket</a></li><li><a href="/blogDocs/baseKnowledge/html/8-webWorker.html" class="sidebar-link">webWorker</a></li><li><a href="/blogDocs/baseKnowledge/html/9-iframe.html" class="sidebar-link">iframe</a></li><li><a href="/blogDocs/baseKnowledge/html/10-interview.html" class="sidebar-link">面试题</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="websocket"><a href="#websocket" class="header-anchor">#</a> webSocket</h1></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新时间:</span> <span class="time">12/5/2022, 2:54:39 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blogDocs/baseKnowledge/html/6-webStorage.html" class="prev">
+        web存储
+      </a></span> <span class="next"><a href="/blogDocs/baseKnowledge/html/8-webWorker.html">
+        webWorker
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/blogDocs/assets/js/app.287606aa.js" defer></script><script src="/blogDocs/assets/js/2.8de8ba9f.js" defer></script><script src="/blogDocs/assets/js/25.16eee2e1.js" defer></script>
+  </body>
+</html>
